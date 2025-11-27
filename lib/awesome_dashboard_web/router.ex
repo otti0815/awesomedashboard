@@ -21,9 +21,11 @@ defmodule AwesomeDashboardWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", AwesomeDashboardWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", AwesomeDashboardWeb do
+    pipe_through :api
+
+    post "/sensors/:id/readings", SensorController, :create_reading
+  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:awesome_dashboard, :dev_routes) do

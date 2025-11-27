@@ -4,5 +4,6 @@ defmodule AwesomeDashboard.App do
 
   resources do
     resource AwesomeDashboard.App.Item
+    resource AwesomeDashboard.App.Sensor
   end
 end
